@@ -64,7 +64,7 @@ pub fn build(b: *B) void {
         addDependencies(tests_check, b, target, optimize);
 
         const check = b.step("check", "Check if exe and tests compile");
-        // check.dependOn(&exe_check.step);
+        check.dependOn(&exe_check.step);
         check.dependOn(&tests_check.step);
     }
 }
