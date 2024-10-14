@@ -77,7 +77,7 @@ fn addDependencies(
 ) void {
     // we are going to setup our dependencies here
 
-    // here we get the depency
+    // here we get the dependency
     const raylib_dep = b.dependency("raylib-zig", .{
         .target = target,
         .optimize = optimize,
@@ -87,8 +87,9 @@ fn addDependencies(
     const raylib = raylib_dep.module("raylib");
     compile_step.root_module.addImport("raylib", raylib);
 
-    // here we link against the raylib c artifact
-    // this is not so usual for zig packages but I guess we can use our own version of raylib if we want
+    // here we link against the raylib c artifact,
+    // this is not so usual for zig packages.
+    // I guess it is usefull if we want to use our own version of raylib.
     const raylib_artifact = raylib_dep.artifact("raylib");
     compile_step.linkLibrary(raylib_artifact);
 }
