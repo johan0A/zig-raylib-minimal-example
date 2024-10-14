@@ -10,7 +10,7 @@
         },
         // you could also vendor the raylib package and still use the package manager like this:
         // .@"raylib-zig" = .{
-        //     .path = "./vendor/raylib", // path to folder with the build.zig of the package
+        //     .path = "./vendor/raylib", // path to the directory with the build.zig of the package
         // },
     },
     .paths = .{
