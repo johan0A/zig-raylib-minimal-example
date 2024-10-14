@@ -75,7 +75,7 @@ fn addDependencies(
     target: B.ResolvedTarget,
     optimize: std.builtin.OptimizeMode,
 ) void {
-    // we are going to setup out dependencies here
+    // we are going to setup our dependencies here
 
     // here we get the depency
     const raylib_dep = b.dependency("raylib-zig", .{
