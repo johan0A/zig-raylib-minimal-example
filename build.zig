@@ -88,7 +88,7 @@ fn addDependencies(
     compile_step.root_module.addImport("raylib", raylib);
 
     // here we link against the raylib c artifact,
-    // this is not so usual for zig packages.
+    // it is needed here but this is not very usual for zig packages.
     // I guess it is usefull if we want to use our own version of raylib.
     const raylib_artifact = raylib_dep.artifact("raylib");
     compile_step.linkLibrary(raylib_artifact);
