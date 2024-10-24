@@ -5,9 +5,8 @@ pub fn build(b: *B) void {
     const target = b.standardTargetOptions(.{});
     const optimize = b.standardOptimizeOption(.{});
 
-    {
-        // this is for compiling the executable
-
+    {    // this is for compiling the executable
+        
         const exe = b.addExecutable(.{
             .name = "zig-exe-template",
             .root_source_file = b.path("src/main.zig"),
@@ -29,8 +28,7 @@ pub fn build(b: *B) void {
         run_step.dependOn(&run_cmd.step);
     }
 
-    {
-        // this is for running the tests
+    {    // this is for running the tests
 
         const exe_unit_tests = b.addTest(.{
             .root_source_file = b.path("src/main.zig"),
@@ -44,9 +42,9 @@ pub fn build(b: *B) void {
         test_step.dependOn(&run_exe_unit_tests.step);
     }
 
-    {
-        // this is for running static checks for zls
+    {   // this is for letting zls run static checks
         // more info: https://kristoff.it/blog/improving-your-zls-experience/
+
         const exe_check = b.addExecutable(.{
             .name = "check",
             .root_source_file = b.path("src/main.zig"),
