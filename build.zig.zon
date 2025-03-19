@@ -1,12 +1,14 @@
 .{
-    .name = "zig-exe-template",
+    .name = .zig_exe_template,
     .version = "0.0.0",
+    .fingerprint = 0xa8bffe96f755027b,
     .dependencies = .{
         // you can use `zig fetch --save <url to depency download>` to add a dependcy from the command line
+        // It also works with a git URL like `git+https://github.com/Not-Nik/raylib-zig`
         // the commad will append something like this here:
-        .@"raylib-zig" = .{
-            .url = "https://github.com/Not-Nik/raylib-zig/archive/a2397363aa1725d903c9da8989195a608e3dd1df.tar.gz",
-            .hash = "12204597958bef7cdc168a32e0578b023e6b84adab455c479f92f07998cd46ba6fb0",
+        .raylib_zig = .{
+            .url = "git+https://github.com/Not-Nik/raylib-zig#d4fc514d54a3b37b9b3e4f4983f611c3469e8c2a",
+            .hash = "raylib_zig-5.6.0-dev-KE8REHguBQAE0xoNkra7mtEqr8cCZHk7k_03txLZB-cZ",
         },
         // you could also vendor the raylib package and still use the package manager like this:
         // .@"raylib-zig" = .{
